@@ -4,10 +4,8 @@
  */
 package lab4;
 
-/**
- *
- * @author LPM
- */
+//Prints eacg field in the file record on one line with the delimiter 
+//replaced by a space
 public class TextFileLineFormatter1 implements FormatStrategy {
     ContactListFileRecord fr;
     private final String SPACE = " ";
