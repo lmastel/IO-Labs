@@ -46,36 +46,19 @@ public class BinaryFileLineReader1 implements FileInputStrategy {
 //String string = in.readUTF();
 
                 while (in.available() > 0) {
-                    fr.setFirstName(in.readUTF());
-                    System.out.println(fr.getFirstName());
-                    fr.setLastName(in.readUTF());
-                    System.out.println(fr.getLastName());
-                    fr.setStreetAddress(in.readUTF());
-                    System.out.println(fr.getStreetAddress());
-                    fr.setCity(in.readUTF());
-                    System.out.println(fr.getCity());
-                    fr.setState(in.readUTF());
-                    System.out.println(fr.getState());
-                    fr.setZip(in.readUTF());
-                    System.out.println(fr.getZip());
-                    fr.setEmail(in.readUTF());
-                    System.out.println(fr.getEmail());
+                    
+                    fr.setFirstName(in.readUTF());                    
+                    fr.setLastName(in.readUTF());                    
+                    fr.setStreetAddress(in.readUTF());                    
+                    fr.setCity(in.readUTF());                    
+                    fr.setState(in.readUTF());                    
+                    fr.setZip(in.readUTF());                    
+                    fr.setEmail(in.readUTF());                    
                     fr.setPhone(in.readUTF());
-                    System.out.println(fr.getPhone());
+                    
                 }
 
-//                fr.setFirstName(in.readUTF());
-//                System.out.println(fr.getFirstName());
-//                fr.setLastName(in.readUTF());
-//                fr.setStreetAddress(in.readUTF());
-//                fr.setCity(in.readUTF());
-//                fr.setState(in.readUTF());
-//                fr.setZip(in.readUTF());
-//                fr.setEmail(in.readUTF());
-//                fr.setPhone(in.readUTF());
-
-                //formatter.setLineFormat();
-
+                formatter.setLineFormat();
 
             }
 

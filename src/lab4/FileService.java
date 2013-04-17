@@ -49,8 +49,9 @@ public class FileService {
         
         //write out a binary file and then read it
         FileOutputStrategy fos = new BinaryFileLineWriter1(fr, null);
-        fs.setOutput(fos, null);        
-        FileInputStrategy fis = new BinaryFileLineReader1(fr,null,null);
-        fs.getInput(fis, null, null);
+        fs.setOutput(fos, null);      
+        FormatStrategy formatter = new TextFileLineFormatter1(fr);
+        FileInputStrategy fis = new BinaryFileLineReader1(fr,null,formatter);
+        fs.getInput(fis, null, formatter);
     }
 }
