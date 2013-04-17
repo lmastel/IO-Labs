@@ -42,9 +42,6 @@ public class BinaryFileLineReader1 implements FileInputStrategy {
                         new BufferedInputStream(
                         new FileInputStream(data)));
 
-
-//String string = in.readUTF();
-
                 while (in.available() > 0) {
                     
                     fr.setFirstName(in.readUTF());                    

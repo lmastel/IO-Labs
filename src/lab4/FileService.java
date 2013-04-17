@@ -33,25 +33,25 @@ public class FileService {
               
         //append a file record to an existing file
         //encodes the file record with a number sign(#) delimiter between data fields
-        //FileEncodeStrategy encoder = new DelimitedFileEncoder(fr,"#");        
-        //FileOutputStrategy fos = new TextFileLineWriter(fr, encoder);
-        //fs.setOutput(fos, encoder);
+        FileEncodeStrategy encoder = new DelimitedFileEncoder(fr,"#");        
+        FileOutputStrategy fos = new TextFileLineWriter(fr, encoder);
+        fs.setOutput(fos, encoder);
 
         //read all files records in the file that has just been appended
         //splits the data fields in the file record by the number sign(#) delimiter
-        //FileDecodeStrategy decoder  = new DelimitedFileDecoder(fr,"#");  
+        FileDecodeStrategy decoder  = new DelimitedFileDecoder(fr,"#");  
         //formats-single line per file record, delimiter replaced by space
-        //FormatStrategy formatter = new TextFileLineFormatter1(fr);
+        FormatStrategy formatter = new TextFileLineFormatter1(fr);
         //formats-separate line printed for each data field in the file record
         //FormatStrategy formatter = new TextFileLineFormatter2(fr);
-        //FileInputStrategy fis = new TextFileLineReader(fr, decoder, formatter);        
-        //fs.getInput(fis, decoder, formatter);
+        FileInputStrategy fis = new TextFileLineReader(fr, decoder, formatter);        
+        fs.getInput(fis, decoder, formatter);
         
         //write out a binary file and then read it
-        FileOutputStrategy fos = new BinaryFileLineWriter1(fr, null);
-        fs.setOutput(fos, null);      
-        FormatStrategy formatter = new TextFileLineFormatter1(fr);
-        FileInputStrategy fis = new BinaryFileLineReader1(fr,null,formatter);
-        fs.getInput(fis, null, formatter);
+//        FileOutputStrategy fos = new BinaryFileLineWriter1(fr, null);
+//        fs.setOutput(fos, null);      
+//        FormatStrategy formatter = new TextFileLineFormatter1(fr);
+//        FileInputStrategy fis = new BinaryFileLineReader1(fr,null,formatter);
+//        fs.getInput(fis, null, formatter);
     }
 }
