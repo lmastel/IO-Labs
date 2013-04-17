@@ -1,12 +1,12 @@
 package lab4;
 
 public class DelimitedFileDecoder implements FileDecodeStrategy {
-    
+
     ContactListFileRecord fr;
     String delimiter;
 
-    DelimitedFileDecoder(ContactListFileRecord fr,String delimiter) {
-        this.fr = fr;        
+    DelimitedFileDecoder(ContactListFileRecord fr, String delimiter) {
+        this.fr = fr;
         this.delimiter = delimiter;
     }
 

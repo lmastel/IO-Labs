@@ -5,9 +5,11 @@ import java.io.*;
 public class TextFileLineWriter implements FileOutputStrategy {
     
     ContactListFileRecord fr;
+    FileEncodeStrategy encoder;
     
-    TextFileLineWriter(ContactListFileRecord fr){
+    TextFileLineWriter(ContactListFileRecord fr, FileEncodeStrategy encoder){
         this.fr = fr;
+        this.encoder = encoder;
     }    
 
     @Override
@@ -16,15 +18,11 @@ public class TextFileLineWriter implements FileOutputStrategy {
         
         boolean append = true;        
         
-        File data = new File(File.separatorChar + "temp" + File.separatorChar
-                + "lab1.txt");
+//        File data = new File(File.separatorChar + "temp" + File.separatorChar
+//                + "lab1.txt");
+        File data = new File("src/lab1.txt");
 
-        PrintWriter out = null;
-        
-        //FileRecord fileRecord = new FileRecord();
-        
-        FileEncodeStrategy encoder = new DelimitedFileEncoder(fr,"#");     
-        
+        PrintWriter out = null;        
         
         try {
 

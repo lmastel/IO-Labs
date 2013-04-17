@@ -2,8 +2,6 @@
 package lab4;
 
 
-public interface FileEncodeStrategy {
-    //public abstract void setLine();
-    
+public interface FileEncodeStrategy {   
     public abstract String getEncodedOutput();
 }

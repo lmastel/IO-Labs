@@ -11,6 +11,10 @@ public class ContactListFileRecord {
     String email;
     String phone;
 
+    public ContactListFileRecord() {
+        
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -82,6 +86,4 @@ public class ContactListFileRecord {
         //data validation needed
         this.phone = phone;
     }
-    
-    
 }
