@@ -86,4 +86,5 @@ public class ContactListFileRecord {
         //data validation needed
         this.phone = phone;
     }
+    
 }

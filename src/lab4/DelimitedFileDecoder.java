@@ -13,7 +13,7 @@ public class DelimitedFileDecoder implements FileDecodeStrategy {
     @Override
     public String[] getDecodedInput(String line) {
         String[] lineParts = line.split(delimiter);
-        //FileRecord fr = new FileRecord();
+        
         fr.setFirstName(lineParts[0]);
         fr.setLastName(lineParts[1]);
         fr.setStreetAddress(lineParts[2]);

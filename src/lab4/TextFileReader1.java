@@ -28,14 +28,11 @@ public class TextFileReader1 implements FileInputStrategy {
 
         BufferedReader in = null;
 
-//        FileDecodeStrategy decoder = new DelimitedFileDecoder(fr,line,"#");
-
         try {
             in = new BufferedReader(new java.io.FileReader(data));
 
             String line = in.readLine();
-
-            //decoder = new DelimitedFileDecoder(fr, "#");
+            
             while (line != null) {
                 //System.out.println(line);                
                 String[] lineParts = decoder.getDecodedInput(line);

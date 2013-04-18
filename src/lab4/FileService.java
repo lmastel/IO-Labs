@@ -3,13 +3,13 @@ package lab4;
 public class FileService {
     
     public void getInput(FileInputStrategy inputStrategy, 
-            FileDecodeStrategy decodeStrategy,
-            FormatStrategy formatStrategy) {
+                         FileDecodeStrategy decodeStrategy,
+                         FormatStrategy formatStrategy) {
         inputStrategy.readInput();
     }
 
     public void setOutput(FileOutputStrategy outputStrategy,
-            FileEncodeStrategy encodeStrategy){
+                          FileEncodeStrategy encodeStrategy){
         outputStrategy.writeOutput();
       
     }
@@ -41,17 +41,17 @@ public class FileService {
         //splits the data fields in the file record by the number sign(#) delimiter
         FileDecodeStrategy decoder  = new DelimitedFileDecoder(fr,"#");  
         //formats-single line per file record, delimiter replaced by space
-        FormatStrategy formatter = new Formatter1(fr);
+        //FormatStrategy formatter = new Formatter1(fr);
         //formats-separate line printed for each data field in the file record
-        //FormatStrategy formatter = new TextFileLineFormatter2(fr);
+        FormatStrategy formatter = new Formatter2(fr);
         FileInputStrategy fis = new TextFileReader1(fr, decoder, formatter);        
         fs.getInput(fis, decoder, formatter);
         
         //write out a binary file and then read it
-//        FileOutputStrategy fos = new BinaryFileLineWriter1(fr, null);
+//        FileOutputStrategy fos = new BinaryFileWriter1(fr, null);
 //        fs.setOutput(fos, null);      
-//        FormatStrategy formatter = new TextFileLineFormatter1(fr);
-//        FileInputStrategy fis = new BinaryFileLineReader1(fr,null,formatter);
+//        FormatStrategy formatter = new Formatter1(fr);
+//        FileInputStrategy fis = new BinaryFileReader1(fr,null,formatter);
 //        fs.getInput(fis, null, formatter);
     }
 }
