@@ -8,11 +8,11 @@ import java.io.IOException;
 
 public class BinaryFileReader1 implements FileInputStrategy {
 
-    private ContactListFileRecord fr;
+    private FileRecord fr;
     private FileDecodeStrategy decoder;
     private FormatStrategy formatter;
 
-    public BinaryFileReader1(ContactListFileRecord fr,
+    public BinaryFileReader1(FileRecord fr,
             FileDecodeStrategy decoder,
             FormatStrategy formatter) {
         this.fr = fr;
@@ -25,12 +25,12 @@ public class BinaryFileReader1 implements FileInputStrategy {
 
 //        File data = new File(File.separatorChar + "temp" + File.separatorChar
 //                + "lab1.txt");
-        //File data = new File("src" + File.separatorChar + "lab1.txt");
+        
         File data = new File("src/lab4.dat");
 
         DataInputStream in = null;
 
-//        FileDecodeStrategy decoder = new DelimitedFileDecoder(fr,line,"#");
+
 
         try {
 

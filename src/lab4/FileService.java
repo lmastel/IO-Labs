@@ -17,7 +17,7 @@ public class FileService {
         //Build a file record. There can be many record types that an 
         //organization uses.It is done here through code but it could be built
         //by through a gui.
-        ContactListFileRecord fr = new ContactListFileRecord();
+        FileRecord fr = new FileRecord();
          
         fr.setFirstName("Firstname7");
         fr.setLastName("Lastname7");

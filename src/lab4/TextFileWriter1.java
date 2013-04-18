@@ -4,10 +4,10 @@ import java.io.*;
 
 public class TextFileWriter1 implements FileOutputStrategy {
     
-    ContactListFileRecord fr;
+    FileRecord fr;
     FileEncodeStrategy encoder;
     
-    TextFileWriter1(ContactListFileRecord fr, FileEncodeStrategy encoder){
+    TextFileWriter1(FileRecord fr, FileEncodeStrategy encoder){
         this.fr = fr;
         this.encoder = encoder;
     }    

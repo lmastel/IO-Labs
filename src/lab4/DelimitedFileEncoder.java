@@ -2,10 +2,10 @@ package lab4;
 
 public class DelimitedFileEncoder implements FileEncodeStrategy {
 
-    ContactListFileRecord fr;
+    FileRecord fr;
     String delimiter;
 
-    DelimitedFileEncoder(ContactListFileRecord fr,String delimiter) {
+    DelimitedFileEncoder(FileRecord fr,String delimiter) {
         this.fr = fr;
         this.delimiter = delimiter;
     }

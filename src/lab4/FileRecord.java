@@ -1,6 +1,6 @@
 package lab4;
 
-public class ContactListFileRecord {
+public class FileRecord {
 
     String firstName;
     String lastName;
@@ -11,7 +11,7 @@ public class ContactListFileRecord {
     String email;
     String phone;
 
-    public ContactListFileRecord() {
+    public FileRecord() {
         
     }
 

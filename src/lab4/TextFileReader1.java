@@ -2,16 +2,17 @@ package lab4;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class TextFileReader1 implements FileInputStrategy {
 
-    private ContactListFileRecord fr;
+    private FileRecord fr;
     private FileDecodeStrategy decoder;
     private FormatStrategy formatter;
     
 
-    public TextFileReader1(ContactListFileRecord fr, 
+    public TextFileReader1(FileRecord fr, 
             FileDecodeStrategy decoder, 
             FormatStrategy formatter) {
         this.fr = fr;
@@ -29,7 +30,7 @@ public class TextFileReader1 implements FileInputStrategy {
         BufferedReader in = null;
 
         try {
-            in = new BufferedReader(new java.io.FileReader(data));
+            in = new BufferedReader(new FileReader(data));
 
             String line = in.readLine();
             

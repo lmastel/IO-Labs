@@ -4,10 +4,10 @@ package lab4;
 //Prints each field of the file record on a separate line
 public class Formatter2 implements FormatStrategy {
 
-    ContactListFileRecord fr;
+    FileRecord fr;
     
 
-    public Formatter2(ContactListFileRecord fr) {
+    public Formatter2(FileRecord fr) {
         this.fr = fr;
     }
 

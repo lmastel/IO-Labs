@@ -4,10 +4,10 @@ import java.io.*;
 
 public class BinaryFileWriter1 implements FileOutputStrategy {
 
-    ContactListFileRecord fr;
+    FileRecord fr;
     FileEncodeStrategy encoder;
 
-    BinaryFileWriter1(ContactListFileRecord fr, FileEncodeStrategy encoder) {
+    BinaryFileWriter1(FileRecord fr, FileEncodeStrategy encoder) {
         this.fr = fr;
         this.encoder = encoder;
     }

@@ -4,11 +4,11 @@ package lab4;
 //Prints each field in the file record on one line with the delimiter 
 //replaced by a space
 public class Formatter1 implements FormatStrategy {
-    ContactListFileRecord fr;
+    FileRecord fr;
     private final String SPACE = " ";
     
     
-    public Formatter1(ContactListFileRecord fr){
+    public Formatter1(FileRecord fr){
         this.fr = fr;
     }
      
