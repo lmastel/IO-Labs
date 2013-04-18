@@ -41,9 +41,9 @@ public class FileService {
         //splits the data fields in the file record by the number sign(#) delimiter
         FileDecodeStrategy decoder  = new DelimitedFileDecoder(fr,"#");  
         //formats-single line per file record, delimiter replaced by space
-        //FormatStrategy formatter = new Formatter1(fr);
+        FormatStrategy formatter = new Formatter1(fr);
         //formats-separate line printed for each data field in the file record
-        FormatStrategy formatter = new Formatter2(fr);
+        //FormatStrategy formatter = new Formatter2(fr);
         FileInputStrategy fis = new TextFileReader1(fr, decoder, formatter);        
         fs.getInput(fis, decoder, formatter);
         
