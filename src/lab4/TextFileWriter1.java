@@ -2,12 +2,12 @@ package lab4;
 
 import java.io.*;
 
-public class TextFileLineWriter implements FileOutputStrategy {
+public class TextFileWriter1 implements FileOutputStrategy {
     
     ContactListFileRecord fr;
     FileEncodeStrategy encoder;
     
-    TextFileLineWriter(ContactListFileRecord fr, FileEncodeStrategy encoder){
+    TextFileWriter1(ContactListFileRecord fr, FileEncodeStrategy encoder){
         this.fr = fr;
         this.encoder = encoder;
     }    

@@ -1,19 +1,18 @@
 package lab4;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class BinaryFileLineReader1 implements FileInputStrategy {
+public class BinaryFileReader1 implements FileInputStrategy {
 
     private ContactListFileRecord fr;
     private FileDecodeStrategy decoder;
     private FormatStrategy formatter;
 
-    public BinaryFileLineReader1(ContactListFileRecord fr,
+    public BinaryFileReader1(ContactListFileRecord fr,
             FileDecodeStrategy decoder,
             FormatStrategy formatter) {
         this.fr = fr;
@@ -35,8 +34,6 @@ public class BinaryFileLineReader1 implements FileInputStrategy {
 
         try {
 
-            //File data = new File("src/lab4.dat");
-
             if (data.exists()) {
                 in = new DataInputStream(
                         new BufferedInputStream(
@@ -55,7 +52,7 @@ public class BinaryFileLineReader1 implements FileInputStrategy {
                     
                 }
 
-                formatter.setLineFormat();
+                formatter.setFormat();
 
             }
 

@@ -4,14 +4,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 
-public class TextFileLineReader implements FileInputStrategy {
+public class TextFileReader1 implements FileInputStrategy {
 
     private ContactListFileRecord fr;
     private FileDecodeStrategy decoder;
     private FormatStrategy formatter;
     
 
-    public TextFileLineReader(ContactListFileRecord fr, 
+    public TextFileReader1(ContactListFileRecord fr, 
             FileDecodeStrategy decoder, 
             FormatStrategy formatter) {
         this.fr = fr;
@@ -49,7 +49,7 @@ public class TextFileLineReader implements FileInputStrategy {
                 fr.setEmail(lineParts[6]);
                 fr.setPhone(lineParts[7]);
                 
-                formatter.setLineFormat();
+                formatter.setFormat();
 
                 line = in.readLine();  // strips out any carriage return chars
             }

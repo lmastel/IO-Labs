@@ -2,18 +2,18 @@
 package lab4;
 
 //Prints each field of the file record on a separate line
-public class TextFileLineFormatter2 implements FormatStrategy {
+public class Formatter2 implements FormatStrategy {
 
     ContactListFileRecord fr;
     
 
-    public TextFileLineFormatter2(ContactListFileRecord fr) {
+    public Formatter2(ContactListFileRecord fr) {
         this.fr = fr;
     }
 
     @Override
-    public void setLineFormat() {
-        //Present file in a format that replaces the delimiter with a space. 
+    public void setFormat() {
+        
         System.out.println("");
         System.out.println(fr.getFirstName());
         System.out.println(fr.getLastName());

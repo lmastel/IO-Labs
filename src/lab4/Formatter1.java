@@ -1,24 +1,21 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab4;
 
-//Prints eacg field in the file record on one line with the delimiter 
+//Prints each field in the file record on one line with the delimiter 
 //replaced by a space
-public class TextFileLineFormatter1 implements FormatStrategy {
+public class Formatter1 implements FormatStrategy {
     ContactListFileRecord fr;
     private final String SPACE = " ";
     
     
-    public TextFileLineFormatter1(ContactListFileRecord fr){
+    public Formatter1(ContactListFileRecord fr){
         this.fr = fr;
     }
      
 
     @Override
-    public void setLineFormat() {
-        //Present file in a format that replaces the delimiter with a space.            
+    public void setFormat() {
+                   
         System.out.println(fr.getFirstName()
                 + SPACE
                 + fr.getLastName()
