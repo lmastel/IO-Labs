@@ -3,12 +3,12 @@ package lab4;
 import java.io.*;
 
 public class TextFileWriter1 implements FileOutputStrategy {
-    
-    FileRecord fr;
+    File pathToFile;
+    FileRecord1 fr;
     FileEncodeStrategy encoder;
     
-    TextFileWriter1(FileRecord fr, FileEncodeStrategy encoder){
-        this.fr = fr;
+    TextFileWriter1(File pathToFile, FileEncodeStrategy encoder){
+        this.pathToFile = pathToFile;
         this.encoder = encoder;
     }    
 
@@ -16,11 +16,7 @@ public class TextFileWriter1 implements FileOutputStrategy {
     public void writeOutput() {
         String separator = System.getProperty( "line.separator" );
         
-        boolean append = true;        
-        
-//        File data = new File(File.separatorChar + "temp" + File.separatorChar
-//                + "lab1.txt");
-        File data = new File("src/lab1.txt");
+        boolean append = true; 
 
         PrintWriter out = null;        
         
@@ -28,7 +24,7 @@ public class TextFileWriter1 implements FileOutputStrategy {
 
             out = new PrintWriter(
                 new BufferedWriter(
-                new FileWriter(data, append)));            
+                new FileWriter(pathToFile, append)));            
             
             out.print(encoder.getEncodedOutput());            
             

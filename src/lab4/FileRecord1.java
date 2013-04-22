@@ -1,6 +1,6 @@
 package lab4;
 
-public class FileRecord {
+public class FileRecord1 {
 
     String firstName;
     String lastName;
@@ -11,7 +11,7 @@ public class FileRecord {
     String email;
     String phone;
 
-    public FileRecord() {
+    public FileRecord1() {
         
     }
 

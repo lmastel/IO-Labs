@@ -7,49 +7,31 @@ import java.io.IOException;
 
 public class TextFileReader1 implements FileInputStrategy {
 
-    private FileRecord fr;
-    private FileDecodeStrategy decoder;
-    private FormatStrategy formatter;
+    private File pathToFile;  
+    FileDecodeStrategy decoder;
+   
     
-
-    public TextFileReader1(FileRecord fr, 
-            FileDecodeStrategy decoder, 
-            FormatStrategy formatter) {
-        this.fr = fr;
+    public TextFileReader1(File pathToFile,FileDecodeStrategy decoder) {
+        this.pathToFile = pathToFile;
         this.decoder = decoder;
-        this.formatter = formatter;
+                
     }
 
     @Override
-    public void readInput() {
-        
-//        File data = new File(File.separatorChar + "temp" + File.separatorChar
-//                + "lab1.txt");
-        File data = new File("src" + File.separatorChar + "lab1.txt");
+    public void readInput() {      
 
         BufferedReader in = null;
 
         try {
-            in = new BufferedReader(new FileReader(data));
+            in = new BufferedReader(new FileReader(pathToFile));
 
             String line = in.readLine();
             
-            while (line != null) {
-                //System.out.println(line);                
-                String[] lineParts = decoder.getDecodedInput(line);
+            while (line != null) {               
+               
+                decoder.getDatafromReader(line);                               
 
-                fr.setFirstName(lineParts[0]);
-                fr.setLastName(lineParts[1]);
-                fr.setStreetAddress(lineParts[2]);
-                fr.setCity(lineParts[3]);
-                fr.setState(lineParts[4]);
-                fr.setZip(lineParts[5]);
-                fr.setEmail(lineParts[6]);
-                fr.setPhone(lineParts[7]);
-                
-                formatter.setFormat();
-
-                line = in.readLine();  // strips out any carriage return chars
+                line = in.readLine();  
             }
 
         } catch (IOException ioe) {

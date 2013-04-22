@@ -1,11 +1,13 @@
 package lab4;
 
-public class DelimitedFileEncoder implements FileEncodeStrategy {
+public class FileEncoder1 implements FileEncodeStrategy {
 
-    FileRecord fr;
+    FileRecord1 fr;
     String delimiter;
+    
+    String separator = System.getProperty( "line.separator" );
 
-    DelimitedFileEncoder(FileRecord fr,String delimiter) {
+    FileEncoder1(FileRecord1 fr,String delimiter) {
         this.fr = fr;
         this.delimiter = delimiter;
     }
@@ -27,6 +29,8 @@ public class DelimitedFileEncoder implements FileEncodeStrategy {
                 + fr.getEmail()
                 + delimiter
                 + fr.getPhone();
+        
+
 
     }
 }

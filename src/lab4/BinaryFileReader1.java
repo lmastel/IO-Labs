@@ -8,52 +8,57 @@ import java.io.IOException;
 
 public class BinaryFileReader1 implements FileInputStrategy {
 
-    private FileRecord fr;
+    private File pathToFile;
+    private FileRecord1 fileRecord;
     private FileDecodeStrategy decoder;
-    private FormatStrategy formatter;
+    private final String SPACE = " ";
 
-    public BinaryFileReader1(FileRecord fr,
-            FileDecodeStrategy decoder,
-            FormatStrategy formatter) {
-        this.fr = fr;
+    public BinaryFileReader1(File pathToFile, FileRecord1 fileRecord) {
+        this.pathToFile = pathToFile;
         this.decoder = decoder;
-        this.formatter = formatter;
+        this.fileRecord = fileRecord;
     }
 
     @Override
     public void readInput() {
 
-//        File data = new File(File.separatorChar + "temp" + File.separatorChar
-//                + "lab1.txt");
-        
-        File data = new File("src/lab4.dat");
-
         DataInputStream in = null;
-
-
 
         try {
 
-            if (data.exists()) {
+            if (pathToFile.exists()) {
                 in = new DataInputStream(
                         new BufferedInputStream(
-                        new FileInputStream(data)));
+                        new FileInputStream(pathToFile)));
 
                 while (in.available() > 0) {
                     
-                    fr.setFirstName(in.readUTF());                    
-                    fr.setLastName(in.readUTF());                    
-                    fr.setStreetAddress(in.readUTF());                    
-                    fr.setCity(in.readUTF());                    
-                    fr.setState(in.readUTF());                    
-                    fr.setZip(in.readUTF());                    
-                    fr.setEmail(in.readUTF());                    
-                    fr.setPhone(in.readUTF());
+                    fileRecord.setFirstName(in.readUTF());
+                    fileRecord.setLastName(in.readUTF());
+                    fileRecord.setStreetAddress(in.readUTF());
+                    fileRecord.setCity(in.readUTF());
+                    fileRecord.setState(in.readUTF());
+                    fileRecord.setZip(in.readUTF());
+                    fileRecord.setEmail(in.readUTF());
+                    fileRecord.setPhone(in.readUTF());
                     
+                    System.out.println(fileRecord.getFirstName()
+                        + SPACE
+                        + fileRecord.getLastName()
+                        + SPACE
+                        + fileRecord.getStreetAddress()
+                        + SPACE
+                        + fileRecord.getCity()
+                        + SPACE
+                        + fileRecord.getState()
+                        + SPACE
+                        + fileRecord.getZip()
+                        + SPACE
+                        + fileRecord.getEmail()
+                        + SPACE
+                        + fileRecord.getPhone());
                 }
-
-                formatter.setFormat();
-
+                
             }
 
         } catch (IOException ioe) {
