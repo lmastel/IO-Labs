@@ -91,7 +91,7 @@ public class FileServiceTest {
          *              written "UTF"
          * 1.2    FileDecoder2 will read all file records and remove the 
          *        delimiter for display
-         * 1.2.1    param fileRecord - the file recoded being read
+         * 1.2.1    param fileRecord - the file record being read
          * 1.2.2    param "#" - a simple String, in this case "#" that is being
          *          used as a delimiter between data fields
          * 2.0 Declare a file input strategy object
