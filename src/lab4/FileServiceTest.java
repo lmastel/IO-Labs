@@ -119,9 +119,10 @@ public class FileServiceTest {
          * FileDecoder2 - Use with file
          * lab1.txt
          */
-        FileDecodeStrategy decoder = new FileDecoder3(fileRecord, "#"); 
+        //FileDecodeStrategy decoder = new FileDecoder2(fileRecord, "#"); 
+        //FileDecodeStrategy decoder = new FileDecoder3(fileRecord, "#"); 
         File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
-        FileInputStrategy fis = new TextFileReader1(pathToFile, decoder);
+        FileInputStrategy fis = new TextFileReader1(pathToFile, new FileDecoder2(fileRecord, "#"));
         FileService fs = new FileService();
         fs.getInput(fis);
 
