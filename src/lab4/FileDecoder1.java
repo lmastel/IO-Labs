@@ -1,6 +1,6 @@
 package lab4;
 
-public class FileDecoder1 implements FileDecodeStrategy {
+public class FileDecoder1 implements FileDecodeStrategy<String,String> {
 
     //private FileRecord1 fileRecord;
     
@@ -8,18 +8,14 @@ public class FileDecoder1 implements FileDecodeStrategy {
     
     private final String SPACE = " ";
     
-//    public FileDecoder1(FileRecord1 fileRecord){
-//        this.fileRecord = fileRecord;
-//        
-//    }
-    
+  
     
         
     @Override
-    public Object getDatafromReader(Object dataFromFile) {
+    public String getDatafromReader(String dataFromFile) {
         System.out.println(dataFromFile);           
                
-        return null;
+        return dataFromFile;
     }
 
 

@@ -12,7 +12,6 @@ public class FileRecord1 {
     String phone;
 
     public FileRecord1() {
-        
     }
 
     public String getFirstName() {
@@ -20,7 +19,9 @@ public class FileRecord1 {
     }
 
     public void setFirstName(String firstName) {
-        //data validation needed
+        if (firstName == null || firstName.length() == 0) {
+            throw new NullPointerException();
+        }
         this.firstName = firstName;
     }
 
@@ -29,7 +30,9 @@ public class FileRecord1 {
     }
 
     public void setLastName(String lastName) {
-        //data validation needed
+        if (lastName == null || lastName.length() == 0) {
+            throw new NullPointerException();
+        }
         this.lastName = lastName;
     }
 
@@ -38,7 +41,9 @@ public class FileRecord1 {
     }
 
     public void setStreetAddress(String streetAddress) {
-        //data validation needed
+        if (streetAddress == null || streetAddress.length() == 0) {
+            throw new NullPointerException();
+        }
         this.streetAddress = streetAddress;
     }
 
@@ -47,7 +52,9 @@ public class FileRecord1 {
     }
 
     public void setCity(String city) {
-        //data validation needed 
+        if (city == null || city.length() == 0) {
+            throw new NullPointerException();
+        }
         this.city = city;
     }
 
@@ -56,7 +63,9 @@ public class FileRecord1 {
     }
 
     public void setState(String state) {
-        //data validation needed
+        if (state == null || state.length() == 0) {
+            throw new NullPointerException();
+        }
         this.state = state;
     }
 
@@ -65,7 +74,9 @@ public class FileRecord1 {
     }
 
     public void setZip(String zip) {
-        //data validation needed
+        if (zip == null || zip.length() == 0) {
+            throw new NullPointerException();
+        }
         this.zip = zip;
     }
 
@@ -74,7 +85,9 @@ public class FileRecord1 {
     }
 
     public void setEmail(String email) {
-        //data validation needed
+        if (email == null || email.length() == 0) {
+            throw new NullPointerException();
+        }
         this.email = email;
     }
 
@@ -83,8 +96,9 @@ public class FileRecord1 {
     }
 
     public void setPhone(String phone) {
-        //data validation needed
+        if (phone == null || phone.length() == 0) {
+            throw new NullPointerException();
+        }
         this.phone = phone;
     }
-    
 }

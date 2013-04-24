@@ -25,9 +25,9 @@ public class FileServiceTest {
          *     Note: Do NOT comment out as the declaration will be used by 
          *           other procedures
          * 2.0 Change the String param value to create different records
+
          */
         FileRecord1 fileRecord = new FileRecord1();
-
         fileRecord.setFirstName("Firstname4");
         fileRecord.setLastName("Lastname4");
         fileRecord.setStreetAddress("Streetaddress4");
@@ -68,11 +68,11 @@ public class FileServiceTest {
          * 5.0 Execute the setOutput method of the FileService passing the
          *    fos variable (FileOutputStrategy) 
          */
-        FileService fs = new FileService();
-        File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
-        FileEncodeStrategy encoder = new FileEncoder1(fileRecord, "#");
-        FileOutputStrategy fos = new TextFileWriter1(pathToFile, encoder);
-        fs.setOutput(fos);
+//        FileService fs = new FileService();
+//        File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
+//        FileEncodeStrategy encoder = new FileEncoder1(fileRecord, "#");
+//        FileOutputStrategy fos = new TextFileWriter1(pathToFile, encoder);
+//        fs.setOutput(fos);
         
         /**
          * End of Procedure 2
@@ -94,6 +94,8 @@ public class FileServiceTest {
          * 1.2.1    param fileRecord - the file record being read
          * 1.2.2    param "#" - a simple String, in this case "#" that is being
          *          used as a delimiter between data fields
+         * 1.3   FileDecoder3 is just like FileDecoder2 but prints each data file
+         *       in the file record on a separate line
          * 2.0 Declare a file input strategy object
          * 3.0 Execute the FileService getInput method passing the 
          *     the FileInputStrategy object
@@ -108,7 +110,7 @@ public class FileServiceTest {
 //        FileDecodeStrategy decoder = new FileDecoder1();
 //        File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
 //        //File pathToFile = new File("src" + File.separatorChar + "multiline.txt");
-//        //File pathToFile = new File("src" + File.separatorChar + "lab4.dat");
+//        File pathToFile = new File("src" + File.separatorChar + "lab4.dat");
 //        FileInputStrategy fis = new TextFileReader1(pathToFile, decoder);
 //        FileService fs = new FileService();
 //        fs.getInput(fis);
@@ -117,11 +119,11 @@ public class FileServiceTest {
          * FileDecoder2 - Use with file
          * lab1.txt
          */
-//        FileDecodeStrategy decoder = new FileDecoder2(fileRecord, "#"); 
-//        File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
-//        FileInputStrategy fis = new TextFileReader1(pathToFile, decoder);
-//        FileService fs = new FileService();
-//        fs.getInput(fis);
+        FileDecodeStrategy decoder = new FileDecoder3(fileRecord, "#"); 
+        File pathToFile = new File("src" + File.separatorChar + "lab1.txt");
+        FileInputStrategy fis = new TextFileReader1(pathToFile, decoder);
+        FileService fs = new FileService();
+        fs.getInput(fis);
 
         /**
          * End of Procedure 3
@@ -175,6 +177,7 @@ public class FileServiceTest {
          */
 //        File pathToFile = new File("src" + File.separatorChar + "lab4.dat");
 //        FileInputStrategy fis = new BinaryFileReader1(pathToFile, fileRecord);
+//        FileService fs = new FileService();
 //        fs.getInput(fis);
         
         /**

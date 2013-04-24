@@ -1,6 +1,6 @@
 package lab4;
 
-public class FileDecoder2 implements FileDecodeStrategy<String,String> {
+public class FileDecoder3 implements FileDecodeStrategy<String,String> {
 
     private FileRecord1 fileRecord;
     
@@ -8,7 +8,7 @@ public class FileDecoder2 implements FileDecodeStrategy<String,String> {
     
     private final String SPACE = " ";
     
-    public FileDecoder2(FileRecord1 fileRecord, String delimiter){
+    public FileDecoder3(FileRecord1 fileRecord, String delimiter){
         this.fileRecord = fileRecord;
         this.delimiter = delimiter;
     }
@@ -30,22 +30,16 @@ public class FileDecoder2 implements FileDecodeStrategy<String,String> {
         fileRecord.setEmail(lineParts[6]);
         fileRecord.setPhone(lineParts[7]);
         
-        System.out.println(fileRecord.getFirstName()
-                + SPACE
-                + fileRecord.getLastName()
-                + SPACE
-                + fileRecord.getStreetAddress()
-                + SPACE
-                + fileRecord.getCity()
-                + SPACE
-                + fileRecord.getState()
-                + SPACE
-                + fileRecord.getZip()
-                + SPACE
-                + fileRecord.getEmail()
-                + SPACE
-                + fileRecord.getPhone());
-        
+        System.out.println(fileRecord.getFirstName());        
+        System.out.println(fileRecord.getLastName());
+        System.out.println(fileRecord.getStreetAddress());
+        System.out.println(fileRecord.getCity());
+        System.out.println(fileRecord.getState());
+        System.out.println(fileRecord.getZip());
+        System.out.println(fileRecord.getEmail());
+        System.out.println(fileRecord.getPhone());
+        System.out.println("");
+                        
         return null;
     }
 
